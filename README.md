@@ -1,86 +1,44 @@
-This project enables gesture-based control of the mouse cursor on a computer using a webcam or depth sensor. The system recognizes hand gestures and translates them into mouse movements and clicks.
+Gesture-Control-Mouse-
+Gesture Control Mouse using Computer Vision
 
-Features
-Hand Gesture Recognition: Uses machine learning to recognize hand gestures and translate them into mouse movements.
+Description This project implements a virtual mouse using hand gestures, leveraging computer vision and machine learning. It uses OpenCV, MediaPipe, and PyAutoGUI to track hand movements and simulate mouse actions.
 
-Mouse Control: Allows for moving the mouse cursor, clicking, scrolling, and dragging with gestures.
+Features •⁠ ⁠Hand Tracking: Uses MediaPipe Hands to detect and track hand movements in real-time. •⁠ ⁠Cursor Control: Moves the cursor based on the index finger's position. •⁠ ⁠Click Detection: Detects thumb-index finger pinch gestures to perform left clicks. •⁠ ⁠Smooth Movement: Maps hand coordinates to screen coordinates for smoother control. •⁠ ⁠Click Optimization: Uses Euclidean distance-based thresholding to detect clicks while preventing accidental rapid clicks. •⁠ ⁠Future Enhancements:
 
-Real-Time Interaction: Provides smooth and responsive mouse control using real-time hand gesture detection.
+Right-click and scrolling functionality.
+Multi-finger gestures for additional controls.
+Adjustable sensitivity and dynamic thresholds.
+Technologies Used •⁠ ⁠Programming Language: Python •⁠ ⁠Libraries:
 
-Customizable Settings: Customize gesture-to-action mappings to suit individual preferences.
+OpenCV (Computer Vision)
+MediaPipe (Hand Tracking)
+PyAutoGUI (Mouse Control)
+NumPy (Numerical Computation)
+Time (Delay Handling)
+Installation 1.⁠ ⁠Install dependencies: pip install opencv-python mediapipe pyautogui numpy
 
-Installation
-To set up the Gesture Control Mouse, follow the steps below:
+2.⁠ ⁠Run the program: python gesture_mouse.py
 
-Prerequisites
-Python 3.x
+Usage •⁠ ⁠Move the cursor: Move your index finger in the air. •⁠ ⁠Left Click: Pinch your thumb and index finger together. •⁠ ⁠Right Click & Scroll (Future Work): Additional gestures can be implemented.
 
-OpenCV (for video capture)
+How It Works 1.⁠ ⁠Hand Tracking:
 
-Mediapipe (for hand tracking)
+Uses MediaPipe Hands to detect hand landmarks.
+Extracts the index finger tip and thumb tip positions.
+2.⁠ ⁠Cursor Movement:
 
-Other dependencies (listed in requirements.txt)
+Maps hand coordinates to screen coordinates.
+Uses a scaling factor for smoother control.
+3.⁠ ⁠Click Detection:
 
-Steps
-Clone the repository to your local machine:
-git clone https://github.com/your-username/gesture-control-mouse.git
-cd gesture-control-mouse
+Calculates Euclidean distance between thumb and index finger.
+If the distance is below a certain threshold, a click event is triggered.
+4.⁠ ⁠Optimization:
 
-Install the required dependencies:
+Implements delay handling to prevent accidental multiple clicks.
+Adjusts sensitivity and thresholds dynamically.
+Project Structure /gesture-control-mouse │── gesture_mouse.py # Main Python script │── requirements.txt # List of dependencies │── README.md # Project Documentation
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run the script to start the gesture control:
+Future Improvements •⁠ ⁠Implement right-click and scrolling gestures. •⁠ ⁠Optimize movement smoothing and accuracy. •⁠ ⁠Add UI elements to configure sensitivity settings.
 
-bash
-Copy
-Edit
-python gesture_control.py
-The webcam will activate, and the system will begin recognizing hand gestures.
-
-Usage
-Move the mouse: Move your hand in the air to control the mouse cursor.
-
-Left click: Make a fist or a specific gesture (depending on the configuration).
-
-Right click: Perform a predefined gesture, such as a finger snap.
-
-Scroll: Use a scrolling gesture (e.g., moving two fingers up or down).
-
-Drag: Hold a fist gesture to drag the mouse.
-
-Configuration
-You can modify the gestures and actions in the configuration file (config.json) to fit your preferences. The default configuration is as follows:
-
-json
-Copy
-Edit
-{
-  "left_click": "fist",
-  "right_click": "snap",
-  "scroll_up": "two_finger_up",
-  "scroll_down": "two_finger_down"
-}
-Contributing
-Contributions are welcome! If you'd like to contribute to this project, follow these steps:
-
-Fork the repository.
-
-Create a new branch.
-
-Make your changes.
-
-Commit and push the changes.
-
-Create a pull request.
-
-Acknowledgements
-Mediapipe - for hand gesture recognition.
-
-OpenCV - for video capture and image processing.
-
-Python - for scripting and automation.
-
-
+Contributors Gaurav Singh
