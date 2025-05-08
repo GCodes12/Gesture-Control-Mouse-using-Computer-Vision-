@@ -1,4 +1,3 @@
-# Gesture-Control-Mouse-using-Computer-Vision-
 This project enables gesture-based control of the mouse cursor on a computer using a webcam or depth sensor. The system recognizes hand gestures and translates them into mouse movements and clicks.
 
 Features
@@ -24,12 +23,9 @@ Other dependencies (listed in requirements.txt)
 
 Steps
 Clone the repository to your local machine:
-
-bash
-Copy
-Edit
 git clone https://github.com/your-username/gesture-control-mouse.git
 cd gesture-control-mouse
+
 Install the required dependencies:
 
 bash
@@ -80,10 +76,11 @@ Commit and push the changes.
 
 Create a pull request.
 
-
 Acknowledgements
 Mediapipe - for hand gesture recognition.
 
 OpenCV - for video capture and image processing.
 
 Python - for scripting and automation.
+
+
